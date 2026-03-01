@@ -2,6 +2,7 @@
 We can output certain attributes of a resource
 Once the resource is created this can be useful for the user
 of the terraform 
+<img width="1053" height="583" alt="Screenshot 2026-03-01 at 9 15 31 PM" src="https://github.com/user-attachments/assets/9e8a8439-38d6-40c6-b7eb-ef02a3b583c0" />
 
 # 1. Create Elastic IP 
 ```
