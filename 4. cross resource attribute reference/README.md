@@ -1,4 +1,5 @@
 # Cross Resource Attribute Reference
+<img width="346" height="147" alt="Screenshot 2026-03-01 at 8 59 47 PM" src="https://github.com/user-attachments/assets/6df1997b-de55-42cd-8959-4f2e7e54d5ac" />
 
 # 1. Create Elastic IP address 
 ```
