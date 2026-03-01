@@ -17,12 +17,15 @@ resource "aws_security_group" "sg" {
 # 3. WHite list the Elastic IP address in security group ingress
 security group resource would already be created. 
 We can perform cross resource attribute reference with < resource type > < name > < attribute >
+
 ```
 resource "aws_vpc_security_group_ingress_rule" "ingress" {
     security_group_id = aws_security_group.sg.id
     from_port = 80 
     to_port = 80 
-    protocol = "tcp"
+    ip_protocol = "tcp"
     cidr_ipv4 = "${aws_eip.lb.public_ip}/32"
 }
 ```
+
+# String interpolation "${aws_eip.lb.public_ip}/32"
