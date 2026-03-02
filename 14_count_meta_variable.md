@@ -245,3 +245,76 @@ $
 <img width="1539" height="129" alt="Screenshot 2026-03-02 at 10 20 42 AM" src="https://github.com/user-attachments/assets/f3404996-83cf-49cd-b4ef-b87226433877" />
 
 
+# Complex indexing
+
+When we dont want to use 0,1,2 etc we can use list and list index for name of the resources
+```
+$ cat main.tf 
+variable "users" {
+  type = list(string)
+  default = ["Alice", "Bob", "Charlie"]
+}
+
+resource "aws_iam_user" "users" {
+  name = var.users[count.index]
+  count = 3
+}%
+
+```                                                             
+$ terraform apply -auto-approve  
+
+Terraform used the selected providers to generate the following execution plan.
+Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_iam_user.users[0] will be created
+  + resource "aws_iam_user" "users" {
+      + arn           = (known after apply)
+      + force_destroy = false
+      + id            = (known after apply)
+      + name          = "Alice"
+      + path          = "/"
+      + tags_all      = (known after apply)
+      + unique_id     = (known after apply)
+    }
+
+  # aws_iam_user.users[1] will be created
+  + resource "aws_iam_user" "users" {
+      + arn           = (known after apply)
+      + force_destroy = false
+      + id            = (known after apply)
+      + name          = "Bob"
+      + path          = "/"
+      + tags_all      = (known after apply)
+      + unique_id     = (known after apply)
+    }
+
+  # aws_iam_user.users[2] will be created
+  + resource "aws_iam_user" "users" {
+      + arn           = (known after apply)
+      + force_destroy = false
+      + id            = (known after apply)
+      + name          = "Charlie"
+      + path          = "/"
+      + tags_all      = (known after apply)
+      + unique_id     = (known after apply)
+    }
+
+Plan: 3 to add, 0 to change, 0 to destroy.
+aws_iam_user.users[2]: Creating...
+aws_iam_user.users[0]: Creating...
+aws_iam_user.users[1]: Creating...
+aws_iam_user.users[2]: Creation complete after 1s [id=Charlie]
+aws_iam_user.users[0]: Creation complete after 1s [id=Alice]
+aws_iam_user.users[1]: Creation complete after 1s [id=Bob]
+
+Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
+$ ```
+
+
+<img width="1544" height="173" alt="Screenshot 2026-03-02 at 10 28 10 AM" src="https://github.com/user-attachments/assets/cae2d7a8-cb69-42d7-9097-1706234dc173" />
+
+
+
