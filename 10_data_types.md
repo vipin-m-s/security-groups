@@ -14,7 +14,9 @@ provider "aws" {
 resource "aws_iam_user" "userx" {
   name = "userx"
 }
+```
 
+```
 $ terraform plan
 
 Terraform used the selected providers to generate the following execution plan. Resource
@@ -49,7 +51,9 @@ variable "iam_username" {}
 resource "aws_iam_user" "userx" {
   name = var.iam_username
 }
+```
 
+```
 $ terraform plan
 var.iam_username
   Enter a value: userx
