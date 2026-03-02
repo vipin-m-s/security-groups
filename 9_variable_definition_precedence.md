@@ -171,3 +171,9 @@ Terraform will perform the following actions:
       + instance_state                       = (known after apply)
       + instance_type                        = "m6.xlarge"
 ```
+
+# Final precedence order is 
+1) var=""
+2) *.tfvars
+3) export TF_VAR_
+4) default=""
