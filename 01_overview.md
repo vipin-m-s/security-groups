@@ -20,12 +20,12 @@ file-exec
 Provisioners should be defined inside the resource, they should not be written outside the resource
 
 ## 2. Format of the provisioner
-
+```
 provisioner "local-exec" {}
 provisioner "remote-exec" {}
-
+```
 ## 3. Local exec provisioner
-
+```
 resource "aws_ec2_instance" "app" {
   ami .... 
   instsance_type....
@@ -34,9 +34,9 @@ resource "aws_ec2_instance" "app" {
     command = "echo ${self.private_ip} >> private_ips.txt"
   }
 }
-
+```
 ## 4. Remote exec provisioner 
-
+```
 resource "aws_ec2_instance" "app" {
   ami .... 
   instance_type ...
@@ -55,7 +55,7 @@ resource "aws_ec2_instance" "app" {
     ]
   }
 }
-
+```
 # Workflow
 ### 1. Create an ec2 instance
 ### 2. Use remote-exec provisioner to isntall ngingx on the remote server
