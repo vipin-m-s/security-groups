@@ -65,7 +65,7 @@ Planning failed. Terraform encountered an error while generating this plan.
 │ required.
 ```
 
-## When a new key,value is added to exxisting object, that newly added key value pair is trimmed
+## When a key, value is passed that doesnt exist in structure, that newly added key value pair is trimmed
 role is ignored here
 ```
 
