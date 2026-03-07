@@ -38,35 +38,36 @@ terraform registry
 local path
 
 ### Exmple1 local path 
-
+```
 module "ec2" {
     source = "../modules/ec2"
 }
-
+```
 ## Ecample2 Generic git repository
-
+```
 module "ec2" {
     source = "git::https://example.com/ec2.git"
-}
+}````
 
 ### Example 3 - github
-
+```
 module "ec2" {
     source = "github.com/modules/ec2"
 }
-
+```
 ### Example4 - http urls
-
+```
 module "ec2" {
     source = "http://example/ec2.zip"
 }
-
+```
 # Local path modules
-
+```
 module "ec2" {
     source = "../../modules/ec2"
 }
-
+```
+```
 ➜  terraform tree
 .
 ├── modules
@@ -79,3 +80,4 @@ module "ec2" {
 │   │   ├── terraform.tfstate
 │   │   └── terraform.tfstate.backup
 │   └── B
+```
