@@ -172,3 +172,9 @@ If you ever set or change modules or backend configuration for Terraform,
 rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
 ```
+## When do we want to upgrade to new provider version
+
+- When a provider releases a new feature
+- It will be available only in new version of provider
+- 
+
